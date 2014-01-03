@@ -48,7 +48,7 @@
         <div class="col-lg-9">
             <div class="panel panel-primary">
                 <!-- Default panel contents -->
-                <div class="panel-heading">Search for students</div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-search"></span><span class="glyphicon glyphicon-user"></span>Search for students</div>
                 <div class="panel-body">
                     <form class="form-inline" role="form">
                         <table class="table">
@@ -68,7 +68,7 @@
                                 <td><input type="text" class="form-control" placeholder="Last name" disabled></td>
                                 <td><input type="text" class="form-control" placeholder="you@example.com" disabled></td>
                                 <td>
-                                    <button class="btn btn-default" type="submit" name="save">Search</button>
+                                    <button class="btn btn-default" type="submit" name="save"><span class="glyphicon glyphicon-search"></span>Search</button>
                                 </td>
                             </tr>
                             </tbody>
@@ -103,22 +103,22 @@
         <div class="col-lg-3">
             <div class="panel panel-primary">
                 <!-- Default panel contents -->
-                <div class="panel-heading">Settings</div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-tasks"></span>Options</div>
                 <div class="panel-body">
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#">Search students</a>
-                        </li>
-                        <li>
-                            <a href="#">Search courses</a>
-                        </li>
-                        <li>
-                            <a href="#">Search sections</a>
-                        </li>
-                        <li>
-                            <a href="#">Search grade transactions</a>
-                        </li>
-                    </ul>
+                    <div class="list-group">
+                        <a href="stuff-search-student.html" class="list-group-item">
+                            <span class="glyphicon glyphicon-user"></span>Search students
+                        </a>
+                        <a href="course-management.html" class="list-group-item">
+                            <span class="glyphicon glyphicon-briefcase"></span>Search courses
+                        </a>
+                        <a href="section-management.html" class="list-group-item">
+                            <span class="glyphicon glyphicon-folder-open"></span>Search sections
+                        </a>
+                        <a href="section-management.html" class="list-group-item">
+                            <span class="glyphicon glyphicon-transfer"></span>Search grade transactions
+                        </a>
+                    </div>
                 </div>
                 <div class="panel-footer">
                 </div>

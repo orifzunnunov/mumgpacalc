@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Search courses | GPA Calc System</title>
+    <title>Search sections | GPA Calc System</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
 </head>
@@ -19,19 +19,19 @@
         <div class="collapse navbar-collapse navHeaderCollapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="stuff-search-student.html" title="Search the students"><span class="glyphicon glyphicon-user"></span></a>
+                    <a href="staff-search-student.html" title="Search the students"><span class="glyphicon glyphicon-user"></span></a>
+                </li>
+                <li>
+                    <a href="staff-search-course.html" title="Search the courses"><span class="glyphicon glyphicon-briefcase"></span></a>
                 </li>
                 <li class="active">
-                    <a href="stuff-search-course.html" title="Search the courses"><span class="glyphicon glyphicon-briefcase"></span></a>
+                    <a href="staff-search-section.html" title="Search the sections"><span class="glyphicon glyphicon-folder-open"></span></a>
                 </li>
                 <li>
-                    <a href="stuff-search-section.html" title="Search the sections"><span class="glyphicon glyphicon-folder-open"></span></a>
-                </li>
-                <li>
-                    <a href="stuff-search-grades-transaction.html" title="Search the sections"><span class="glyphicon glyphicon-transfer"></span></a>
+                    <a href="staff-search-grades-transaction.html" title="Search the sections"><span class="glyphicon glyphicon-transfer"></span></a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stuff<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Staff<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="#"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
                     </ul>
@@ -48,21 +48,21 @@
         <div class="col-lg-9">
             <div class="panel panel-primary">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><span class="glyphicon glyphicon-search"></span><span class="glyphicon glyphicon-briefcase"></span>Search courses</div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-search"></span><span class="glyphicon glyphicon-folder-open"></span>Search sections</div>
                 <div class="panel-body">
                     <form class="form-inline" role="form">
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>Course id</th>
-                                <th>Course Name</th>
+                                <th>Section id</th>
+                                <th>Section Name</th>
                                 <th></th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td><input type="text" class="form-control" placeholder="Course id"></td>
-                                <td><input type="text" class="form-control" placeholder="Course name" disabled></td>
+                                <td><input type="text" class="form-control" placeholder="Section id"></td>
+                                <td><input type="text" class="form-control" placeholder="Section name" disabled></td>
                                 <td>
                                     <button class="btn btn-default" type="submit" name="search"><span class="glyphicon glyphicon-search"></span>Search</button>
                                 </td>
@@ -75,7 +75,7 @@
                         <div class="col-md-6">
                             <div class="panel panel-info">
                                 <div class="panel-heading">
-                                    <span class="glyphicon glyphicon-briefcase"></span>Course details
+                                    <span class="glyphicon glyphicon-folder-open"></span>Section info
                                 </div>
                                 <div class="panel-body">
 
@@ -84,9 +84,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="panel panel-info">
-                                <div class="panel-heading"><span class="glyphicon glyphicon-folder-open"></span>Related sections</div>
+                                <div class="panel-heading"><span class="glyphicon glyphicon-briefcase"></span>Assigned course</div>
                                 <div class="panel-body">
-
                                 </div>
                             </div>
                         </div>
@@ -102,16 +101,16 @@
                 <div class="panel-heading"><span class="glyphicon glyphicon-tasks"></span>Options</div>
                 <div class="panel-body">
                     <div class="list-group">
-                        <a href="stuff-search-student.html" class="list-group-item">
+                        <a href="staff-search-student.html" class="list-group-item">
                             <span class="glyphicon glyphicon-user"></span>Search students
                         </a>
-                        <a href="stuff-search-course.html" class="list-group-item active">
+                        <a href="staff-search-course.html" class="list-group-item">
                             <span class="glyphicon glyphicon-briefcase"></span>Search courses
                         </a>
-                        <a href="stuff-search-section.html" class="list-group-item">
+                        <a href="staff-search-section.html" class="list-group-item active">
                             <span class="glyphicon glyphicon-folder-open"></span>Search sections
                         </a>
-                        <a href="stuff-search-grades-transaction.html" class="list-group-item">
+                        <a href="staff-search-grades-transaction.html" class="list-group-item">
                             <span class="glyphicon glyphicon-transfer"></span>Search grade transactions
                         </a>
                     </div>

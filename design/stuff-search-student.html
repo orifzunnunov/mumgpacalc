@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Faculty login | GPA Calc System</title>
+    <title>Search for student | GPA Calc System</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
 </head>
@@ -10,7 +10,6 @@
 <!-- top navbar-->
 <div class="navbar navbar-inverse navbar-static-top">
     <div class="container">
-
         <a href="#" class="navbar-brand">GPA Calc System</a>
         <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
             <span class="icon-bar"></span>
@@ -49,83 +48,77 @@
         <div class="col-lg-9">
             <div class="panel panel-primary">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><span class="glyphicon glyphicon-folder-open"></span>PPJan14 | Students</div>
+                <div class="panel-heading">Search for students</div>
                 <div class="panel-body">
-                    <form class="form-horizontal">
-                        <!-- Table -->
-                        <table class="table table-hover">
+                    <form class="form-inline" role="form">
+                        <table class="table">
                             <thead>
                             <tr>
-                                <th>#</th>
+                                <th>Student id</th>
                                 <th>First Name</th>
                                 <th>Last Name</th>
-                                <th>Email</th>
-                                <th>Grade</th>
+                                <th>Email address</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>Orifhon</td>
-                                <td>Zunnunov</td>
-                                <td>hitadorg@gmail.com</td>
+                                <td><input type="text" class="form-control" placeholder="Student id"></td>
+                                <td><input type="text" class="form-control" placeholder="First name" disabled></td>
+                                <td><input type="text" class="form-control" placeholder="Last name" disabled></td>
+                                <td><input type="text" class="form-control" placeholder="you@example.com" disabled></td>
                                 <td>
-                                    <select class="form-control input-md">
-                                        <option>-Grade-</option>
-                                        <option>A</option>
-                                        <option>A-</option>
-                                        <option>B+</option>
-                                        <option>B</option>
-                                        <option>B-</option>
-                                        <option>C</option>
-                                        <option>C-</option>
-                                        <option>NC</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Vida</td>
-                                <td>Tahmasebi</td>
-                                <td>vida@gmail.com</td>
-                                <td>
-                                    <select class="form-control input-md">
-                                        <option>-Grade-</option>
-                                        <option>A</option>
-                                        <option>A-</option>
-                                        <option>B+</option>
-                                        <option>B</option>
-                                        <option>B-</option>
-                                        <option>C</option>
-                                        <option>C-</option>
-                                        <option>NC</option>
-                                    </select>
+                                    <button class="btn btn-default" type="submit" name="save">Search</button>
                                 </td>
                             </tr>
                             </tbody>
                         </table>
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                <button class="btn btn-primary" type="submit" name="save">Save</button>
+                    </form>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <span class="glyphicon glyphicon-user"></span> Personal details
+                                </div>
+                                <div class="panel-body">
+
+                                </div>
                             </div>
                         </div>
-                    </form>
+                        <div class="col-md-6">
+                            <div class="panel panel-info">
+                                <div class="panel-heading"><span class="glyphicon glyphicon-book"></span> Study details</div>
+                                <div class="panel-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="panel-footer">
-                    <p>Review the course and leave your comments about the course below.</p>
                 </div>
             </div>
         </div>
         <div class="col-lg-3">
             <div class="panel panel-primary">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><span class="glyphicon glyphicon-tasks"></span>Options</div>
+                <div class="panel-heading">Settings</div>
                 <div class="panel-body">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item">
-                            <span class="glyphicon glyphicon-folder-open"></span>My courses
-                        </a>
-                    </div>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#">Search students</a>
+                        </li>
+                        <li>
+                            <a href="#">Search courses</a>
+                        </li>
+                        <li>
+                            <a href="#">Search sections</a>
+                        </li>
+                        <li>
+                            <a href="#">Search grade transactions</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="panel-footer">
                 </div>

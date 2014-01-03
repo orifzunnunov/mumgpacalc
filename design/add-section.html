@@ -10,7 +10,7 @@
 <!-- top navbar-->
 <div class="navbar navbar-inverse navbar-static-top">
     <div class="container">
-        <a href="#" class="navbar-brand">GPA Calc System</a>
+        <a href="#" class="navbar-brand"><span class="glyphicon glyphicon-home"></span>GPA Calc System</a>
         <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -18,22 +18,19 @@
         </button>
         <div class="collapse navbar-collapse navHeaderCollapse">
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="user-management.html" title="User management"><span class="glyphicon glyphicon-user"></span></a>
+                </li>
+                <li>
+                    <a href="course-management.html" title="Course management"><span class="glyphicon glyphicon-briefcase"></span></a>
+                </li>
                 <li class="active">
-                    <a href="#">Menu1</a>
-                </li>
-                <li>
-                    <a href="#">Menu2</a>
-                </li>
-                <li>
-                    <a href="#contact" data-toggle="modal">Menu 3</a>
+                    <a href="section-management.html" title="Section management"><span class="glyphicon glyphicon-folder-open"></span></a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">View as<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Student</a></li>
-                        <li><a href="#">Staff</a></li>
-                        <li><a href="#">Faculty</a></li>
-                        <li><a href="#">Admin</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -49,7 +46,7 @@
             <div class="panel panel-primary">
                 <!-- Default panel contents -->
                 <div class="panel-heading"><span class="glyphicon glyphicon-folder-open"></span><span
-                        class="glyphicon glyphicon-pencil"></span>Add new section details
+                        class="glyphicon glyphicon-plus-sign"></span>Add new section details
                 </div>
                 <div class="panel-body">
                     <form class="form-horizontal">
@@ -109,7 +106,7 @@
                         <a href="course-management.html" class="list-group-item">
                             <span class="glyphicon glyphicon-briefcase"></span>Course management
                         </a>
-                        <a href="section-management.html" class="list-group-item">
+                        <a href="section-management.html" class="list-group-item active">
                             <span class="glyphicon glyphicon-folder-open"></span>Section management
                         </a>
                     </div>

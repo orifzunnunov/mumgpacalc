@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <title> | GPA Calc System</title>
+    <title>User management | GPA Calc System</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
 </head>
@@ -10,8 +10,7 @@
 <!-- top navbar-->
 <div class="navbar navbar-inverse navbar-static-top">
     <div class="container">
-
-        <a href="#" class="navbar-brand">GPA Calc System</a>
+        <a href="#" class="navbar-brand"><span class="glyphicon glyphicon-home"></span>GPA Calc System</a>
         <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -20,21 +19,18 @@
         <div class="collapse navbar-collapse navHeaderCollapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active">
-                    <a href="#">Menu1</a>
+                    <a href="user-management.html" title="User management"><span class="glyphicon glyphicon-user"></span></a>
                 </li>
                 <li>
-                    <a href="#">Menu2</a>
+                    <a href="course-management.html" title="Course management"><span class="glyphicon glyphicon-briefcase"></span></a>
                 </li>
                 <li>
-                    <a href="#">Menu 3</a>
+                    <a href="section-management.html" title="Section management"><span class="glyphicon glyphicon-folder-open"></span></a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">View as<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Student</a></li>
-                        <li><a href="#">Staff</a></li>
-                        <li><a href="#">Faculty</a></li>
-                        <li><a href="#">Admin</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -51,7 +47,8 @@
                 <!-- Default panel contents -->
                 <div class="panel-heading"><span class="glyphicon glyphicon-user"></span>User Management</div>
                 <div class="panel-body">
-                    <a href="add-user.html" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>Add new user</a>
+                    <a href="add-user.html" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>Add
+                        new user</a>
                     <!-- Table -->
                     <table class="table table-hover">
                         <thead>
@@ -71,7 +68,8 @@
                             <td>Otto</td>
                             <td>@mdo</td>
                             <td>Student</td>
-                            <td><a href="edit-user.html" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span>Edit</a></td>
+                            <td><a href="edit-user.html" class="btn btn-default" data-target="tooltip" data-placement="top" title="Edit"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
+                                <a href="view-user.html" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>View</a></td>
                         </tr>
                         <tr>
                             <td>2</td>
@@ -79,7 +77,8 @@
                             <td>Thornton</td>
                             <td>@fat</td>
                             <td>Student</td>
-                            <td><a href="edit-user.html" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span>Edit</a></td>
+                            <td><a href="edit-user.html" class="btn btn-default" data-target="tooltip" data-placement="top" title="Edit"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
+                                <a href="view-user.html" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>View</a></td>
                         </tr>
                         <tr>
                             <td>3</td>
@@ -87,7 +86,8 @@
                             <td>the Bird</td>
                             <td>@twitter</td>
                             <td>Faculty</td>
-                            <td><a href="edit-user.html" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span>Edit</a></td>
+                            <td><a href="edit-user.html" class="btn btn-default" data-target="tooltip" data-placement="top" title="Edit"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
+                                <a href="view-user.html" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>View</a></td>
                         </tr>
                         </tbody>
                     </table>
@@ -103,7 +103,7 @@
                 <div class="panel-heading"><span class="glyphicon glyphicon-tasks"></span>Options</div>
                 <div class="panel-body">
                     <div class="list-group">
-                        <a href="user-management.html" class="list-group-item">
+                        <a href="user-management.html" class="list-group-item active">
                             <span class="glyphicon glyphicon-user"></span>User management
                         </a>
                         <a href="course-management.html" class="list-group-item">

@@ -71,3 +71,6 @@ body.register {
     margin-right: 5px;
 }
 
+ul.navbar-right li span.glyphicon, .navbar-brand .glyphicon{
+    margin-right: 5px;
+}

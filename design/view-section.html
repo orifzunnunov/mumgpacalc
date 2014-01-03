@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Edit course details | GPA Calc System</title>
+    <title>View section details | GPA Calc System</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
 </head>
@@ -21,10 +21,10 @@
                 <li>
                     <a href="user-management.html" title="User management"><span class="glyphicon glyphicon-user"></span></a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="course-management.html" title="Course management"><span class="glyphicon glyphicon-briefcase"></span></a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="section-management.html" title="Section management"><span class="glyphicon glyphicon-folder-open"></span></a>
                 </li>
                 <li class="dropdown">
@@ -45,32 +45,43 @@
         <div class="col-lg-9">
             <div class="panel panel-primary">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><span class="glyphicon glyphicon-briefcase"></span><span class="glyphicon glyphicon-pencil"></span>Edit course details</div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-folder-open"></span><span
+                        class="glyphicon glyphicon-search"></span>View section details
+                </div>
                 <div class="panel-body">
                     <form class="form-horizontal">
                         <div class="form-group">
                             <label for="course-name" class="col-lg-2 control-label">Name</label>
 
                             <div class="col-lg-10"><input type="text" class="form-control" id="course-name"
-                                                          placeholder="Course name" name="coursename" value="Parallel Programming"></div>
+                                                          placeholder="Name" name="coursename"
+                                                          value="PPJan14" disabled></div>
                         </div>
                         <div class="form-group">
-                            <label for="course-credits" class="col-lg-2 control-label">Credits</label>
+                            <label for="section-course" class="col-lg-2 control-label">Course: </label>
 
-                            <div class="col-lg-10"><input type="text" class="form-control" id="course-credits"
-                                                          placeholder="Course credits" name="credits" value="4"></div>
+                            <div class="col-lg-10"><select class="form-control input-md" id="section-course"
+                                                           name="country" disabled>
+                                <option>-Select the course-</option>
+                                <option selected="selected">Parallel Programming</option>
+                                <option>Algorithms</option>
+                                <option>Web Application Programming</option>
+                            </select></div>
                         </div>
                         <div class="form-group">
-                            <label for="course-code" class="col-lg-2 control-label">Code</label>
+                            <label for="section-faculty" class="col-lg-2 control-label">Faculty: </label>
 
-                            <div class="col-lg-10"><input type="text" class="form-control" id="course-code"
-                                                          placeholder="Course code" name="code" value="PP001"></div>
+                            <div class="col-lg-10"><select class="form-control input-md" id="section-faculty"
+                                                           name="faculty" disabled>
+                                <option>-Select the course-</option>
+                                <option selected="selected">Bruce Lecter</option>
+                                <option>Ankit Chaudhary</option>
+                                <option>Keith Levi</option>
+                            </select></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button class="btn btn-default" type="submit" name="back">Back</button>
-                                <button class="btn btn-primary" type="submit" name="save">Save</button>
-                                <button class="btn btn-danger" type="submit" name="delete" data-target="#delete-course" data-toggle="modal">Delete</button>
                             </div>
                         </div>
                     </form>
@@ -89,10 +100,10 @@
                         <a href="user-management.html" class="list-group-item">
                             <span class="glyphicon glyphicon-user"></span>User management
                         </a>
-                        <a href="course-management.html" class="list-group-item active">
+                        <a href="course-management.html" class="list-group-item">
                             <span class="glyphicon glyphicon-briefcase"></span>Course management
                         </a>
-                        <a href="section-management.html" class="list-group-item">
+                        <a href="section-management.html" class="list-group-item active">
                             <span class="glyphicon glyphicon-folder-open"></span>Section management
                         </a>
                     </div>
@@ -104,24 +115,6 @@
     </div>
 </div>
 <!-- container end-->
-<!-- delete user alert box -->
-<div class="modal fade" id="delete-course" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4>Delete the user</h4>
-            </div>
-            <div class="modal-body">
-                <p>You are about to delete the user.</p>
-                <a href="#" class="btn btn-default" data-dismiss="modal">No</a>
-                <a href="#" class="btn btn-primary">Yes</a>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div>
-<!-- delete user alert box end -->
 <!-- footer -->
 <div class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">

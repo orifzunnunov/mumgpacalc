@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Search students | GPA Calc System</title>
+    <title>Search courses | GPA Calc System</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
 </head>
+
 <body>
 <!-- top navbar-->
 <div class="navbar navbar-inverse navbar-static-top">
@@ -17,10 +18,10 @@
         </button>
         <div class="collapse navbar-collapse navHeaderCollapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active">
+                <li>
                     <a href="stuff-search-student.html" title="Search the students"><span class="glyphicon glyphicon-user"></span></a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="stuff-search-course.html" title="Search the courses"><span class="glyphicon glyphicon-briefcase"></span></a>
                 </li>
                 <li>
@@ -47,25 +48,21 @@
         <div class="col-lg-9">
             <div class="panel panel-primary">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><span class="glyphicon glyphicon-search"></span><span class="glyphicon glyphicon-user"></span>Search students</div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-search"></span><span class="glyphicon glyphicon-briefcase"></span>Search courses</div>
                 <div class="panel-body">
                     <form class="form-inline" role="form">
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>Student id</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Email address</th>
+                                <th>Course id</th>
+                                <th>Course Name</th>
                                 <th></th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td><input type="text" class="form-control" placeholder="Student id"></td>
-                                <td><input type="text" class="form-control" placeholder="First name" disabled></td>
-                                <td><input type="text" class="form-control" placeholder="Last name" disabled></td>
-                                <td><input type="text" class="form-control" placeholder="you@example.com" disabled></td>
+                                <td><input type="text" class="form-control" placeholder="Course id"></td>
+                                <td><input type="text" class="form-control" placeholder="Course name" disabled></td>
                                 <td>
                                     <button class="btn btn-default" type="submit" name="search"><span class="glyphicon glyphicon-search"></span>Search</button>
                                 </td>
@@ -78,7 +75,7 @@
                         <div class="col-md-6">
                             <div class="panel panel-info">
                                 <div class="panel-heading">
-                                    <span class="glyphicon glyphicon-user"></span>Personal info
+                                    <span class="glyphicon glyphicon-briefcase"></span>Course details
                                 </div>
                                 <div class="panel-body">
 
@@ -87,7 +84,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="panel panel-info">
-                                <div class="panel-heading"><span class="glyphicon glyphicon-book"></span>Study details</div>
+                                <div class="panel-heading"><span class="glyphicon glyphicon-folder-open"></span>Related sections</div>
                                 <div class="panel-body">
 
                                 </div>
@@ -105,10 +102,10 @@
                 <div class="panel-heading"><span class="glyphicon glyphicon-tasks"></span>Options</div>
                 <div class="panel-body">
                     <div class="list-group">
-                        <a href="stuff-search-student.html" class="list-group-item active">
+                        <a href="stuff-search-student.html" class="list-group-item">
                             <span class="glyphicon glyphicon-user"></span>Search students
                         </a>
-                        <a href="stuff-search-course.html" class="list-group-item">
+                        <a href="stuff-search-course.html" class="list-group-item active">
                             <span class="glyphicon glyphicon-briefcase"></span>Search courses
                         </a>
                         <a href="stuff-search-section.html" class="list-group-item">

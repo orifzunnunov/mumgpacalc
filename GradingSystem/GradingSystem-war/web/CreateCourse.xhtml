@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Add new course | GPA Calc System</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="css/style.css" rel="stylesheet"/>
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </h:head>
+    <h:body>
+        <!-- top navbar-->
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <a href="#" class="navbar-brand"><span class="glyphicon glyphicon-home"></span>GPA Calc System</a>
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse navHeaderCollapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="user-management.html" title="User management"><span class="glyphicon glyphicon-user"></span></a>
+                        </li>
+                        <li class="active">
+                            <a href="course-management.html" title="Course management"><span class="glyphicon glyphicon-briefcase"></span></a>
+                        </li>
+                        <li>
+                            <a href="section-management.html" title="Section management"><span class="glyphicon glyphicon-folder-open"></span></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- top navbar end-->
+
+        <!-- container -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="panel panel-primary">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading"><span class="glyphicon glyphicon-briefcase"></span><span class="glyphicon glyphicon-plus-sign"></span>Add new course details</div>
+                        <div class="panel-body">
+                            <h:form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="course-name" class="col-lg-2 control-label">Course Name: </label>
+
+                                    <div class="col-lg-10"><h:inputText value="#{courseCDI.course.coursename}" class="form-control" id="course-name"
+                                                                        p:placeholder="Course name"/></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="course-credits" class="col-lg-2 control-label">Credits: </label>
+
+                                    <div class="col-lg-10"><h:inputText value="#{courseCDI.course.credit}" p:placeholder="Course credits" class="form-control" id="course-credits"/></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="course-code" class="col-lg-2 control-label">Course Code:</label>
+
+                                    <div class="col-lg-10"><h:inputText value="#{courseCDI.course.course_code}" class="form-control" id="course-code" p:placeholder="Course code"/></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <h:commandButton value="Save" action="#{courseCDI.makeCourse()}"  class="btn btn-primary" />
+                                        <h:commandButton value="Cancel" action="admin" immediate="true"  class="btn btn-danger" style="margin-left:15px;"/>
+                                    </div>
+                                </div>
+                            </h:form>
+                        </div>
+                        <div class="panel-footer"></div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3">
+                    <div class="panel panel-primary">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading"><span class="glyphicon glyphicon-tasks"></span>Options</div>
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="user-management.html" class="list-group-item">
+                                    <span class="glyphicon glyphicon-user"></span>User management
+                                </a>
+                                <a href="course-management.html" class="list-group-item active">
+                                    <span class="glyphicon glyphicon-briefcase"></span>Course management
+                                </a>
+                                <a href="section-management.html" class="list-group-item">
+                                    <span class="glyphicon glyphicon-folder-open"></span>Section management
+                                </a>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- container end-->
+        <!-- delete user alert box -->
+        <div class="modal fade" id="delete-user" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Delete the user</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>You are about to delete the user.</p>
+                        <a href="#" class="btn btn-default" data-dismiss="modal">No</a>
+                        <a href="#" class="btn btn-primary">Yes</a>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- delete user alert box end -->
+        <!-- footer -->
+        <div class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container">
+                <p class="navbar-text pull-left">GPA Calc System &copy; Group 6</p>
+                <a href="#" class="btn btn-info pull-right navbar-btn">Contact Us</a>
+            </div>
+        </div>
+    </h:body>
+</html>
+

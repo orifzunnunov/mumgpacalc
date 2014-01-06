@@ -19,16 +19,20 @@
         <div class="collapse navbar-collapse navHeaderCollapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="staff-search-student.html" title="Search the students"><span class="glyphicon glyphicon-user"></span></a>
+                    <a href="staff-search-student.html" title="Search the students"><span
+                            class="glyphicon glyphicon-user"></span></a>
                 </li>
                 <li class="active">
-                    <a href="staff-search-course.html" title="Search the courses"><span class="glyphicon glyphicon-briefcase"></span></a>
+                    <a href="staff-search-course.html" title="Search the courses"><span
+                            class="glyphicon glyphicon-briefcase"></span></a>
                 </li>
                 <li>
-                    <a href="staff-search-section.html" title="Search the sections"><span class="glyphicon glyphicon-folder-open"></span></a>
+                    <a href="staff-search-section.html" title="Search the sections"><span
+                            class="glyphicon glyphicon-folder-open"></span></a>
                 </li>
                 <li>
-                    <a href="staff-search-grades-transaction.html" title="Search the sections"><span class="glyphicon glyphicon-transfer"></span></a>
+                    <a href="staff-search-grades-transaction.html" title="Search the sections"><span
+                            class="glyphicon glyphicon-transfer"></span></a>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Staff<b class="caret"></b></a>
@@ -48,7 +52,9 @@
         <div class="col-lg-9">
             <div class="panel panel-primary">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><span class="glyphicon glyphicon-search"></span><span class="glyphicon glyphicon-briefcase"></span>Search courses</div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-search"></span><span
+                        class="glyphicon glyphicon-briefcase"></span>Search courses
+                </div>
                 <div class="panel-body">
                     <form class="form-inline" role="form">
                         <table class="table">
@@ -64,7 +70,9 @@
                                 <td><input type="text" class="form-control" placeholder="Course id"></td>
                                 <td><input type="text" class="form-control" placeholder="Course name" disabled></td>
                                 <td>
-                                    <button class="btn btn-default" type="submit" name="search"><span class="glyphicon glyphicon-search"></span>Search</button>
+                                    <button class="btn btn-default" type="submit" name="search"><span
+                                            class="glyphicon glyphicon-search"></span>Search
+                                    </button>
                                 </td>
                             </tr>
                             </tbody>
@@ -78,15 +86,56 @@
                                     <span class="glyphicon glyphicon-briefcase"></span>Course details
                                 </div>
                                 <div class="panel-body">
-
+                                    <table class="table table-hover">
+                                        <tr>
+                                            <td class="text-muted">Course id</td>
+                                            <td>001</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Course name</td>
+                                            <td>Parallel Programming</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Course code</td>
+                                            <td>CS471</td>
+                                        </tr>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="panel panel-info">
-                                <div class="panel-heading"><span class="glyphicon glyphicon-folder-open"></span>Related sections</div>
+                                <div class="panel-heading"><span class="glyphicon glyphicon-folder-open"></span>Related
+                                    sections
+                                </div>
                                 <div class="panel-body">
-
+                                    <table class="table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Section</th>
+                                            <th>Time</th>
+                                            <th>Enrolled</th>
+                                            <th>Prof.</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>PPJUL14</td>
+                                            <td>July, 2013</td>
+                                            <td>24</td>
+                                            <td>B. Lecter</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>PPAUG13</td>
+                                            <td>August, 2013</td>
+                                            <td>13</td>
+                                            <td>B.Lecter</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +143,8 @@
                 </div>
                 <div class="panel-footer">
                     <div>
-                        <button class="btn btn-default btn-sm" type="submit" name="course-generate">Generate report</button>
+                        <button class="btn btn-default btn-sm" type="submit" name="course-generate">Generate report
+                        </button>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>View user details| GPA Calc System</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+
+<body>
+<!-- top navbar-->
+<div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <a href="#" class="navbar-brand"><span class="glyphicon glyphicon-home"></span>GPA Calc System</a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse navHeaderCollapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active">
+                    <a href="user-management.html" title="User management"><span class="glyphicon glyphicon-user"></span></a>
+                </li>
+                <li>
+                    <a href="course-management.html" title="Course management"><span class="glyphicon glyphicon-briefcase"></span></a>
+                </li>
+                <li>
+                    <a href="section-management.html" title="Section management"><span class="glyphicon glyphicon-folder-open"></span></a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- top navbar end-->
+
+<!-- container -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="panel panel-primary">
+                <!-- Default panel contents -->
+                <div class="panel-heading"><span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-search"></span>View the user details</div>
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">User roles</label>
+
+                            <div class="col-lg-10">
+                                <label>
+                                    <input type="checkbox" value="student" name="role-student" checked="checked" disabled> Student
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="stuff" name="role-stuff" disabled> Stuff
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="faculty" name="role-stuff" disabled> Faculty
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="admin" name="role-admin" disabled> Admin
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-name" class="col-lg-2 control-label">First Name</label>
+
+                            <div class="col-lg-10"><input type="text" class="form-control" id="register-name"
+                                                          placeholder="First name" name="firstname" value="Mark" disabled></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-lastname" class="col-lg-2 control-label">Last Name</label>
+
+                            <div class="col-lg-10"><input type="text" class="form-control" id="register-lastname"
+                                                          placeholder="Last name" name="lastname" value="Otto" disabled></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-email" class="col-lg-2 control-label">Email</label>
+
+                            <div class="col-lg-10"><input type="email" class="form-control" id="register-email"
+                                                          placeholder="you@example.com" name="email" value="mark.otto@gmail.com" disabled></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-securityq" class="col-lg-2 control-label">Security question: </label>
+
+                            <div class="col-lg-10"><input type="text" class="form-control" id="register-securityq"
+                                                          placeholder="Your security question" name="securityq" value="What's my age" disabled></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-securitya" class="col-lg-2 control-label">Security answer: </label>
+
+                            <div class="col-lg-10"><input type="text" class="form-control" id="register-securitya"
+                                                          placeholder="Your security question answer" name="securitya" value="24" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-street" class="col-lg-2 control-label">Address: </label>
+
+                            <div class="col-lg-10"><input type="text" class="form-control" id="register-street"
+                                                          placeholder="Street address" name="address" value="1000N 4th Street" disabled></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-city" class="col-lg-2 control-label">City: </label>
+
+                            <div class="col-lg-10"><input type="text" class="form-control" id="register-city"
+                                                          placeholder="City" name="city" value="Fairfield" disabled></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-state" class="col-lg-2 control-label">State: </label>
+
+                            <div class="col-lg-10"><select class="form-control input-md" id="register-state"
+                                                           name="state" disabled>
+                                <option selected="selected">IA</option>
+                            </select></div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="register-zip" class="col-lg-2 control-label">Zip Code: </label>
+
+                            <div class="col-lg-10"><input type="text" class="form-control" id="register-zip"
+                                                          placeholder="Zip Code" name="zip" value="52557" disabled></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-country" class="col-lg-2 control-label">Country: </label>
+
+                            <div class="col-lg-10"><select class="form-control input-md" id="register-country"
+                                                           name="country" disabled>
+                                <option selected="selected">United States</option>
+                            </select></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button class="btn btn-default" type="submit" name="Back">Back</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3">
+            <div class="panel panel-primary">
+                <!-- Default panel contents -->
+                <div class="panel-heading"><span class="glyphicon glyphicon-tasks"></span>Options</div>
+                <div class="panel-body">
+                    <div class="list-group">
+                        <a href="user-management.html" class="list-group-item active">
+                            <span class="glyphicon glyphicon-user"></span>User management
+                        </a>
+                        <a href="course-management.html" class="list-group-item">
+                            <span class="glyphicon glyphicon-briefcase"></span>Course management
+                        </a>
+                        <a href="section-management.html" class="list-group-item">
+                            <span class="glyphicon glyphicon-folder-open"></span>Section management
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- container end-->
+<!-- footer -->
+<div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <p class="navbar-text pull-left">GPA Calc System &copy; Group 6</p>
+        <a href="#" class="btn btn-info pull-right navbar-btn">Contact Us</a>
+    </div>
+</div>
+<!-- footer end-->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

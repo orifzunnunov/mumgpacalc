@@ -19,13 +19,16 @@
         <div class="collapse navbar-collapse navHeaderCollapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="user-management.html" title="User management"><span class="glyphicon glyphicon-user"></span></a>
+                    <a href="user-management.html" title="User management"><span
+                            class="glyphicon glyphicon-user"></span></a>
                 </li>
                 <li>
-                    <a href="course-management.html" title="Course management"><span class="glyphicon glyphicon-briefcase"></span></a>
+                    <a href="course-management.html" title="Course management"><span
+                            class="glyphicon glyphicon-briefcase"></span></a>
                 </li>
                 <li class="active">
-                    <a href="section-management.html" title="Section management"><span class="glyphicon glyphicon-folder-open"></span></a>
+                    <a href="section-management.html" title="Section management"><span
+                            class="glyphicon glyphicon-folder-open"></span></a>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
@@ -80,8 +83,126 @@
                             </select></div>
                         </div>
                         <div class="form-group">
+                            <!-- add users alert box -->
+                            <div class="modal fade" id="add-user-section" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4>Add students to the section</h4>
+                                        </div>
+                                        <div class="modal-body" style="overflow-y: scroll; max-height: 300px;">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                <tr>
+                                                    <th>Select</th>
+                                                    <th>#</th>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Username</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td><input type="checkbox" value="added"></td>
+                                                    <td>1</td>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" value="added"></td>
+                                                    <td>2</td>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" value="added"></td>
+                                                    <td>3</td>
+                                                    <td>Larry</td>
+                                                    <td>the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" value="added"></td>
+                                                    <td>1</td>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" value="added"></td>
+                                                    <td>2</td>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" value="added"></td>
+                                                    <td>3</td>
+                                                    <td>Larry</td>
+                                                    <td>the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" value="added"></td>
+                                                    <td>1</td>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" value="added"></td>
+                                                    <td>2</td>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" value="added"></td>
+                                                    <td>3</td>
+                                                    <td>Larry</td>
+                                                    <td>the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" value="added"></td>
+                                                    <td>1</td>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" value="added"></td>
+                                                    <td>2</td>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" value="added"></td>
+                                                    <td>3</td>
+                                                    <td>Larry</td>
+                                                    <td>the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="#" class="btn btn-default" data-dismiss="modal">Add</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- add user alert box end -->
+                        </div>
+                        <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button class="btn btn-default" type="submit" name="back">Back</button>
+                                <button class="btn btn-default" type="button" name="add-user"
+                                        data-target="#add-user-section" data-toggle="modal">Students
+                                </button>
                                 <button class="btn btn-primary" type="submit" name="save">Save</button>
                                 <button class="btn btn-danger" type="submit" name="delete" data-target="#delete-course"
                                         data-toggle="modal">Delete

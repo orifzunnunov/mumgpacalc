@@ -13,16 +13,16 @@
     <h:body  class="register">
         <div class="container">
     <div class="panel panel-default panel-primary">
-        <div class="panel-heading">Sign in | GPA Calc System</div>
+        <div class="panel-heading"><span class="glyphicon glyphicon-lock"></span>Sign in | GPA Calc System</div>
         <div class="panel-body">
             <h:form class="form-signin">
                 <h2 class="form-signin-heading">GPA Calc System</h2>
-                <h:inputText value="#{loginCDI.user.username}" class="form-control" required="true"  p:placeholder="Email address" id="email">
+                <h:inputText value="#{loginCDI.user.username}" class="form-control" required="true"  p:placeholder="Email address" id="email" p:autofocus="true">
                 <f:validator for="email" validatorId="emailValidator"/>
                 </h:inputText>
                 <h:inputSecret value="#{loginCDI.user.password}" class="form-control" required="true" p:placeholder="Password"/>
                 <label class="checkbox">
-                    <h:commandLink value="Forgot Password" action="forgotPassword" class="pull-right" immediate="true"/>
+                    <h:commandLink value="Forgot password" action="forgotPassword" class="pull-right btn btn-default" immediate="true"/>
                 </label>
                 <h:commandButton class="btn btn-lg btn-primary btn-block" value="Sign in" action="#{loginCDI.login}" />
                 <h:outputText value="#{loginCDI.loginMessage}" style="color: red"/>

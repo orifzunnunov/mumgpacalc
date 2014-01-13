@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package pm.gradingsystem.cdi;
 
 import GPASystem_Services.CourseService;
@@ -18,60 +17,110 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.model.SelectItem;
+import javax.inject.Inject;
 import javax.inject.Named;
+import pm.gradingsystem.ejb.UserManagement;
+//import javax.mail.FetchProfile.Item;
 import pm.gradingsystem.entity.Course;
 import pm.gradingsystem.entity.IUser;
 import pm.gradingsystem.entity.Section;
 
 /**
- * 
+ *
  * @author Prakriti
  */
 @Named
 @RequestScoped
 public class SectionCDI {
- private Section section=new Section();
-   private List<Section> clist=new ArrayList<>();
-    private List<SelectItem> coursesItemList;
-     private List<SelectItem> facultyItemList;
-   @EJB
-   private SectionService sectionEJB;
 
+    private Section section = new Section();
+    private List<Section> clist = new ArrayList<>();
+    private List<SelectItem> coursesItemList;
+    private List<SelectItem> facultyItemList;
+    @EJB
+    private SectionService sectionEJB;
+    @EJB
+    private CourseService courseEJB;
+    @EJB
+    private UserService userEJB;
+    @EJB
+    private FacultyService facultyEJB;
+    private List<Course> courselist = new ArrayList<>();
+    private List<IUser> facultymembers = new ArrayList<>();
+    private List<Section> sectionlist = new ArrayList<>();
+    private int courseId;
+    private int facultyId;
+    // private Map<Long, Boolean> checked = new HashMap<Long, Boolean>();
+    private List<IUser> students;
+    @EJB
+    private UserManagement userManagement;
+    @Inject
+    private AddStudentCDI addstd;
+    //List<IUser> checkedItems ;
+
+//    public List<IUser> getCheckedItems() {
+//        return checkedItems;
+//    }
+//    public void setStudents(List<IUser> students) {
+//        this.students = addstd.getStudents();
+//    }
+    public List<IUser> getStudents() {
+        //System.out.println(userManagement.findStd().toString());
+        if (students == null) {
+            students = userManagement.findStd();
+        }
+        return students;
+    }
+
+//    public Map<Long, Boolean> getChecked() {
+//        return checked;
+//    }
+//
+//    public void setChecked(Map<Long, Boolean> checked) {
+//        this.checked = checked;
+//    }
+//    public void addSTD() {
+//        checkedItems = new ArrayList<>();
+//
+//        for (IUser item : students) {
+//            if (checked.get(item.getId())) {
+//                checkedItems.add(item);
+//            }
+//        }
+//        students=checkedItems;
+//        System.out.println("the checke Item is "+checkedItems.toString());
+//       // checked.clear(); // If necessary.
+//        // sectionEJB.a
+//       // this.section.setStudents(checkedItems);
+//        // Now do your thing with checkedItems.
+//    }
     public List<SelectItem> getFacultyItemList() {
+        facultyItemList = new ArrayList<>();
+        getFacultymembers();
+        for (IUser faculty1 : facultymembers) {
+            SelectItem item = new SelectItem(faculty1.getId(), faculty1.getFirstname());
+            facultyItemList.add(item);
+        }
         return facultyItemList;
     }
 
     public void setFacultyItemList(List<SelectItem> facultyItemList) {
         this.facultyItemList = facultyItemList;
     }
-   @EJB
-   private CourseService courseEJB;
-    @EJB
-   private UserService userEJB;
-     @EJB
-   private FacultyService facultyEJB;
-   private List<Course> courselist=new ArrayList<>();
-    private List<IUser> facultymembers=new ArrayList<>();
-    private List<Section> sectionlist=new ArrayList<>();
-   private int courseId;
-    private int facultyId;
 
+//    public List<SelectItem> getFacultyItemList() {
+//        return facultyItemList;
+//    }
+//    public void setFacultyItemList(List<SelectItem> facultyItemList) {
+//        this.facultyItemList = facultyItemList;
+//    }
     public List<IUser> getFacultymembers() {
-         setFacultymembers(userEJB.getFacultyUsers());
+        setFacultymembers(userEJB.getFacultyUsers());
         return facultymembers;
     }
 
     public void setFacultymembers(List<IUser> facultymembers) {
         this.facultymembers = facultymembers;
-    }
- @EJB
-    private CourseService courseService;
-    public List<Section> getSectionlist() {
-        return sectionlist;
-    }
-
-    public void setSectionlist(List<Section> sectionlist) {
-        this.sectionlist = sectionlist;
     }
 
     public int getFacultyId() {
@@ -89,6 +138,7 @@ public class SectionCDI {
     public void setCourseId(int courseId) {
         this.courseId = courseId;
     }
+
     public List<Course> getCourselist() {
         setCourselist(courseEJB.getAllCourses());
         return courselist;
@@ -97,6 +147,7 @@ public class SectionCDI {
     public void setCourselist(List<Course> courselist) {
         this.courselist = courselist;
     }
+
     public List<Section> getClist() {
 
         return sectionEJB.getSectionList();
@@ -106,7 +157,6 @@ public class SectionCDI {
         this.clist = clist;
     }
 
- 
     public Section getSection() {
         return section;
     }
@@ -114,6 +164,7 @@ public class SectionCDI {
     public void setSection(Section section) {
         this.section = section;
     }
+
     public List<SelectItem> getCoursesItemList() {
         coursesItemList = new ArrayList<>();
         getCourselist();
@@ -123,34 +174,45 @@ public class SectionCDI {
         }
         return coursesItemList;
     }
-     public List<SelectItem> getfacultyItemList() {
-        facultyItemList = new ArrayList<>();
-        getFacultymembers();
-        for (IUser faculty1 : facultymembers) {
-            SelectItem item = new SelectItem(faculty1.getId(), faculty1.getFirstname());
-            facultyItemList.add(item);
-        }
-        return facultyItemList;
-    }
+
+//    public List<SelectItem> getfacultyItemList() {
+//        facultyItemList = new ArrayList<>();
+//        getFacultymembers();
+//        for (IUser faculty1 : facultymembers) {
+//            SelectItem item = new SelectItem(faculty1.getId(), faculty1.getFirstname());
+//            facultyItemList.add(item);
+//        }
+//        return facultyItemList;
+//    }
     public SectionCDI() {
-            }
-    public String createSection(){
-       this.section.setCourse(courseService.findCourse(courseId));
-     //  this.section.setFaculty(facultyEJB.findFaculty(facultyId));
-       sectionEJB.makeSection(section);
-       return "sectionManagement";
     }
-     public String deleteSection(long id){
-       sectionEJB.deleteSection(id);
-       return "sectionManagement";
+
+    public String createSection() {
+        this.section.setCourse(courseEJB.findCourse(courseId));
+        this.section.setFaculty(facultyEJB.findFaculty(facultyId));
+        //System.out.println("chechekd items: "+checkedItems);
+        this.section.setStudents(addstd.getCheckedItems());
+        sectionEJB.makeSection(section);
+        return "sectionManagement";
     }
-     public String updateSection(Long id){
-       this.section=  sectionEJB.getSection(id);
-       return "sectionManagement";
+
+    public String deleteSection(Long id) {
+        sectionEJB.deleteSection(id);
+        return "sectionManagement";
     }
-     public String updateFinal(){
+
+    public String updateSection(Long id) {
+        this.section = sectionEJB.getSection(id);
+        return "editsection";
+    }
+
+    public String updateFinal() {
+        //this.section = sectionEJB.getSection(id);
+//        this.section.setCourse(courseEJB.findCourse(courseId));
+//        this.section.setFaculty(facultyEJB.findFaculty(facultyId));
+//        this.section.setStudents(addstd.getCheckedItems());
         sectionEJB.updateIt(section);
-        return "sectionManagement"; 
-     }
-     
+        return "sectionManagement";
+    }
+
 }

@@ -5,31 +5,84 @@
  */
 
 package pm.gradingsystem.entity;
-
 import java.io.Serializable;
+//import java.sql.Date;
+//import java.sql.Timestamp;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+//import javax.persistence.TemporalType;
 
 /**
  * 
  * @author Prakriti
  */
 @Entity
-public class Grade implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Grade implements Serializable  {
+   
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @OneToOne
     private IUser student_id;
+  //  @Temporal(TemporalType.Date)
+//    @Temporal(javax.persistence.TemporalType.DATE)
+//    Date datetime;
+//
+//    public Date getDatetime() {
+//        return datetime;
+//    }
+//
+//    public void setDatetime(Date datetime) {
+//        this.datetime = datetime;
+//    }
+    
+//    @Transient
+//    Date datetime;
+//
+//    public Date getDatetime() {
+//        return datetime;
+//    }
+//
+//    public void setDatetime(Date datetime) {
+//        this.datetime = datetime;
+//    }
+    public IUser getStudent_id() {
+        return student_id;
+    }
+
+    public void setStudent_id(IUser student_id) {
+        this.student_id = student_id;
+    }
+
+    public Section getSection() {
+        return section;
+    }
+
+    public void setSection(Section section) {
+        this.section = section;
+    }
     @OneToOne
     private Section section;
+    private float gpa;
+    
     public int getId() {
         return id;
     }
+
+    public float getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(float gpa) {
+        this.gpa = gpa;
+    }
+
+   
 
     public void setId(int id) {
         this.id = id;

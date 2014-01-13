@@ -33,8 +33,16 @@ public class Section  {
     private Long id;
     @ManyToOne  
     private Course course;
+    @OneToOne  
+    private IUser faculty;
+    @OneToMany
+    private List<IUser> students=new ArrayList<>();
+    private SectionPeriod sp;
+    private String section_name;
 
-    public IUser getFaculty() {
+   
+    
+   public IUser getFaculty() {
         return faculty;
     }
 
@@ -57,12 +65,7 @@ public class Section  {
     public void setDatetime(int datetime) {
         this.datetime = datetime;
     }
-    @OneToOne  
-    private IUser faculty;
-    @OneToMany
-    private List<IUser> students=new ArrayList<>();
-    private SectionPeriod sp;
-    private String section_name;
+  
    
     private int datetime;
 

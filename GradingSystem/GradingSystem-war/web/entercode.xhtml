@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
         <title>Verify your account | GPA Calc System</title>
         <link href="css/bootstrap.min.css" rel="stylesheet"/>
@@ -13,14 +14,14 @@
     <h:body class="register">
         <div class="container">
             <div class="panel panel-default panel-primary">
-                <div class="panel-heading">Verify your account | GPA Calc System</div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-info-sign"></span>Verify your account | GPA Calc System</div>
                 <div class="panel-body">
                     <h:form class="form-signin">
                         <h2 class="form-signin-heading">Verification</h2>
                         <div class="alert alert-info">
                             <span>Please input your verification code below</span>
                         </div>
-                        <h:inputText value="#{loginCDI.code}" class="form-control" id="forgot" required="true" validatorMessage="The Security code should be exactly 4 digits">
+                        <h:inputText value="#{loginCDI.code}" class="form-control forgot" p:autofocus="true" id="forgot" required="true" validatorMessage="The Security code should be exactly 4 digits">
                             <f:validateLength minimum="4" maximum="4"></f:validateLength>
                         </h:inputText>
                         <h:commandButton class="btn btn-lg btn-primary btn-block" value="Verify" action="#{loginCDI.check()}" />

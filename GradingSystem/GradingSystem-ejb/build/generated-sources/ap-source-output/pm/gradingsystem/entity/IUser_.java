@@ -7,7 +7,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 import pm.gradingsystem.entity.Address;
 import pm.gradingsystem.entity.Role;
 
-@Generated(value="EclipseLink-2.5.1.v20130918-rNA", date="2014-01-04T02:26:10")
+@Generated(value="EclipseLink-2.5.1.v20130918-rNA", date="2014-01-11T16:08:01")
 @StaticMetamodel(IUser.class)
 public class IUser_ { 
 

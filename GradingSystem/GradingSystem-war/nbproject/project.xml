@@ -10,7 +10,16 @@
                     <file>${reference.GradingSystem-ejb.dist}</file>
                 </library>
             </web-module-libraries>
-            <web-module-additional-libraries/>
+            <web-module-additional-libraries>
+                <library dirs="100">
+                    <file>${reference.GradingSystem-ejb.dist-ear}</file>
+                    <path-in-war>/</path-in-war>
+                </library>
+                <library dirs="100">
+                    <file>${reference.GradingSystem-ejb.dist}</file>
+                    <path-in-war>/</path-in-war>
+                </library>
+            </web-module-additional-libraries>
             <source-roots>
                 <root id="src.dir"/>
             </source-roots>
@@ -26,6 +35,14 @@
                 <target>dist</target>
                 <clean-target>clean</clean-target>
                 <id>dist</id>
+            </reference>
+            <reference>
+                <foreign-project>GradingSystem-ejb</foreign-project>
+                <artifact-type>j2ee_ear_archive</artifact-type>
+                <script>build.xml</script>
+                <target>dist-ear</target>
+                <clean-target>clean-ear</clean-target>
+                <id>dist-ear</id>
             </reference>
         </references>
     </configuration>

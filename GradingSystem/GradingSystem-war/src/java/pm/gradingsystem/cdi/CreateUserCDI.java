@@ -77,7 +77,7 @@ public class CreateUserCDI {
     }
 
     private List<Role> rolesSelected = new ArrayList();
-    private int[] num=new int[0];
+    private int[] num;
 
     public int[] getNum() {
         return num;
@@ -133,10 +133,5 @@ public class CreateUserCDI {
 
     public void update() {
         userManagement.update(user);
-    }
-
-    public String createUser() {
-        this.user = new IUser();
-        return "createuserforadmin";
     }
 }

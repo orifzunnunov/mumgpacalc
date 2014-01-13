@@ -56,7 +56,7 @@ public class IUser implements Serializable {
 //    private List<Role> roles;
     @OneToOne(cascade = CascadeType.ALL)
     private Address address = new Address();
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     private List<Role> roles;
 
     public int[] getNum() {

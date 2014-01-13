@@ -142,18 +142,6 @@ public class UserCDI {
         return "listusers";
     }
 
-    public String finalUpdatestd(int id) {
-        // this.user=userService.getUser(id);
-        List<Role> troles = new ArrayList(user.getNum().length);
-
-        for (int i : user.getNum()) {
-            troles.add(userService.findRoles(i));
-        }
-        user.setRoles(troles);
-        userService.update(user);
-        return "";
-    }
-
     public void delete(int id) {
         String page = "";
         //  this.user = userService.getUser(id);
@@ -161,24 +149,19 @@ public class UserCDI {
 //        page = "deletepage";
 //        return page;
     }
-
-    public String check(int id) {
-        String page = null;
-        try {
-            this.user = userService.getUser(id);
-            loginEjb.validation(user);
-            System.out.println("login succeed");
-            System.out.println(session.getPage());
-            page = "dashboard";
-        } catch (LoginFailException ex) {
-            loginMessage = "The security code is wrong";
-        }
-
-        return page;
-    }
-
-//    public String createUser() {
-//        this.user = new IUser();
-//        return "createuserforadmin";
+//
+//    public String check(int id) {
+//        String page = null;
+//        try {
+//            this.user = userService.getUser(id);
+//            loginEjb.validation(user);
+//            System.out.println("login succeed");
+//            System.out.println(session.getPage());
+//            page = "dashboard";
+//        } catch (LoginFailException ex) {
+//            loginMessage = "The security code is wrong";
+//        }
+//
+//        return page;
 //    }
 }

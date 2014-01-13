@@ -6,7 +6,7 @@
 
 package pm.gradingsystem.entity;
 
-import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +21,7 @@ import javax.persistence.OneToOne;
 public class Evaluation {
    
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @OneToOne
     private Section section;
@@ -33,7 +33,7 @@ public class Evaluation {
     public Evaluation() {
     }
 
-    public Evaluation(Section section,  Student stud, String description) {
+    public Evaluation(Section section,  IUser stud, String description) {
         this.section = section;
        
         this.student = stud;
@@ -54,7 +54,7 @@ public class Evaluation {
         return student;
     }
 
-    public void setStud(Student stud) {
+    public void setStud(IUser stud) {
         this.student = stud;
     }
 

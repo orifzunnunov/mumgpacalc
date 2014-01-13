@@ -7,10 +7,14 @@
 package pm.gradingsystem.entity;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 /**
  * 
@@ -23,7 +27,17 @@ public class Role  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+      @ManyToMany(mappedBy = "roles" )
+    private List<IUser> users=new ArrayList<>();
 
+    public List<IUser> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<IUser> users) {
+        this.users = users;
+    }
+    
     public String getName() {
         return name;
     }

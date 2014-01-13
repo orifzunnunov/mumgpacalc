@@ -145,6 +145,7 @@ public class LoginCDI {
             //end of authorization
 //            page="adminpage";
         } catch (LoginFailException ex) {
+            //  page = session.getPage();
             loginMessage = "No such user";
         }
 
@@ -182,12 +183,23 @@ public class LoginCDI {
             userService.findByUserCode(user.getUsername(), code);
             System.out.println("login succeed");
             System.out.println(session.getPage());
-            for(Role role:user.getRoles()){
-            if(role.getName().equals("Admin")) {
-             return "admindashboard";
+            if (user.getFirstname() == null || user.getLastname() == null || user.getAddress() == null) {
+                session.setUser(user);
+                return "completeregisterforuser";
             }
+            for (Role role : user.getRoles()) {
+                if (role.getName().equals("Admin")) {
+                    return "listusers";
+                } else if (role.getName().equals("Staff")) {
+                    return "searchstdbyid";
                 }
-            page = "completeregisterforuser";
+                if (role.getName().equals("Faculty")) {
+                    return "facultydashboard";
+                }
+                if (role.getName().equals("Student")) {
+                    return "studentdashboard";
+                }
+            }
         } catch (Exception ex) {
             loginMessage = "The security code is wrong";
         }
@@ -201,7 +213,7 @@ public class LoginCDI {
         String page = "";
         HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
         request.getSession().invalidate();
-        page="index";
+        page = "index";
         return page;
     }
 }

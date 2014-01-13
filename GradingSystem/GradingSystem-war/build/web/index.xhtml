@@ -26,7 +26,9 @@
                         <h2>Grade point average calculation system</h2>
                         <p>Colleges report GPA (grade point average) on a 4.0 scale. The top grade is an A, which equals 4.0. This is the standard scale at most colleges, universities.</p>
                         <h:form>
-                            <h:commandButton class="btn btn-lg btn-success" value="Sign in  the system" action="#{loginCDI.login('entercode')}" />
+                            <h:commandLink class="btn btn-lg btn-success" value="Sign in  the system" action="#{loginCDI.login('entercode')}">
+                                <span class="glyphicon glyphicon-chevron-right" style="margin: 0 0 0 5px;"></span>
+                            </h:commandLink>
                         </h:form>
                     </div>
                 </div>

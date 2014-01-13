@@ -37,8 +37,9 @@ public class UserService {
     }
 // new added
     public List<IUser> getFacultyUsers() {
+        return em.createQuery("SELECT c FROM IUser c LEFT JOIN c.roles r WHERE r.name='Faculty'", IUser.class).getResultList();
    //   List<IUser> users= em.createQuery("SELECT r FROM Role r WHERE r.id=1",Role.class).getSingleResult().getUsers();
-        return em.createQuery("SELECT c FROM IUser c", IUser.class).getResultList();
+     //   return em.createQuery("SELECT c FROM IUser c", IUser.class).getResultList();
   //     int[] uid=new int[];
 //               em.createQuery("SELECT c FROM IUser c", IUser.class).getResultList();
 //        CriteriaBuilder builder = em.getCriteriaBuilder();

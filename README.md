@@ -10,3 +10,4 @@ Database name: GradingSystemDB
 System super admin details:
 username: admin@admin.com
 password: admin
+security code: 1234

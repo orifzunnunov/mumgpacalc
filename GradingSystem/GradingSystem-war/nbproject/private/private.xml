@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/prakriti_workspace/GradingSystem/GradingSystem-war/web/facultysectionstd.xhtml</file>
-            <file>file:/E:/prakriti_workspace/GradingSystem/GradingSystem-war/web/templates/stuff/menu.xhtml</file>
-            <file>file:/E:/prakriti_workspace/GradingSystem/GradingSystem-war/web/searchsectionbyid.xhtml</file>
-            <file>file:/E:/prakriti_workspace/GradingSystem/GradingSystem-war/web/js/jquery-1.10.2.min.js</file>
-            <file>file:/E:/prakriti_workspace/GradingSystem/GradingSystem-war/web/searchtransactions.xhtml</file>
-            <file>file:/E:/prakriti_workspace/GradingSystem/GradingSystem-war/web/templates/stuff/header.xhtml</file>
-            <file>file:/E:/prakriti_workspace/GradingSystem/GradingSystem-war/src/java/pm/gradingsystem/cdi/SectionStudentCDI.java</file>
-            <file>file:/E:/prakriti_workspace/GradingSystem/GradingSystem-war/src/java/pm/gradingsystem/cdi/TransactionCDI.java</file>
+            <file>file:/E:/prakriti_workspace/GradingSystem/GradingSystem-war/web/reports/Test.jrxml</file>
+            <file>file:/E:/prakriti_workspace/GradingSystem/GradingSystem-war/web/reports/gradeReport.jrxml</file>
+            <file>file:/E:/prakriti_workspace/GradingSystem/GradingSystem-war/web/searchcoursebyid.xhtml</file>
+            <file>file:/E:/prakriti_workspace/GradingSystem/GradingSystem-war/src/java/pm/gradingsystem/cdi/SearchCourseCDI.java</file>
         </group>
     </open-files>
 </project-private>

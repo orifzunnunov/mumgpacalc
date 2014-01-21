@@ -29,6 +29,10 @@ public class Grade implements Serializable  {
     private int id;
     @OneToOne
     private IUser student_id;
+     @OneToOne
+    private Section section;
+    private float gpa;
+    
   //  @Temporal(TemporalType.Date)
 //    @Temporal(javax.persistence.TemporalType.DATE)
 //    Date datetime;
@@ -66,10 +70,7 @@ public class Grade implements Serializable  {
     public void setSection(Section section) {
         this.section = section;
     }
-    @OneToOne
-    private Section section;
-    private float gpa;
-    
+   
     public int getId() {
         return id;
     }

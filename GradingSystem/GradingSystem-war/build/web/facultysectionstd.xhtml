@@ -17,12 +17,12 @@
                 <div class="col-lg-9">
                     <div class="panel panel-primary">
                         <!-- Default panel contents -->
-                        <div class="panel-heading"><span class="glyphicon glyphicon-folder-open"></span>PPJan14 | Students</div>
+                        <div class="panel-heading"><span class="glyphicon glyphicon-folder-open"></span>#{sectionStudentCDI.section.section_name} | Students</div>
                         <div class="panel-body">
                             <h:form class="form-horizontal">
                                
                                 <h:dataTable value="#{sectionStudentCDI.facultyCDI.students}" var="user" class="table table-hover">
-                                   
+                                      
                                     <h:column>
                                         <f:facet name="header">Id</f:facet>
                                             #{user.id}
@@ -41,29 +41,19 @@
                                     </h:column>
                                      <h:column>
                                         <f:facet name="header">Grade</f:facet>
-                                        <h:selectOneMenu class="form-control input-md" value="#{sectionStudentCDI.gradept}">
-                                            <f:selectItem itemValue="4" itemLabel="AH"  />
-                                            <f:selectItem itemValue="4" itemLabel="A+" />
-                                            <f:selectItem itemValue="4" itemLabel="A" />
-                                            <f:selectItem itemValue="3.8" itemLabel="A-" />
-                                            <f:selectItem itemValue="3.6" itemLabel="B+" />
-                                            <f:selectItem itemValue="3.2" itemLabel="B-" />
-                                            <f:selectItem itemValue="3.4" itemLabel="B" />  
-                                            <f:selectItem itemValue="3" itemLabel="C+" />
-                                            <f:selectItem itemValue="2.8" itemLabel="C" />
-                                            <f:selectItem itemValue="2.6" itemLabel="C-" />  
-                                            <f:selectItem itemValue="2.59" itemLabel="NC" />
-                                        </h:selectOneMenu>
+                                        
+                                          #{sectionStudentCDI.getGrade(user)}
                                     </h:column>
                                     <h:column>
                                     <f:facet name="header">Operations</f:facet>
-                                    <h:commandButton value="Add Grade" class="btn btn-default" action="#{sectionStudentCDI.saveUser(user)}"/>
-                                      <h:outputText value="#{sectionStudentCDI.gradeMessage}" style="color: red"/>
+                                    <h:commandButton value="Add Grade" class="btn btn-default" action="#{sectionStudentCDI.addGradePage(user)}"/>
+                                   
+                                     
                                     </h:column>
                                 </h:dataTable>
                                 <div class="form-group">
                                     <div class="col-sm-10">
-                                       
+                                      <h:outputText value="#{sectionStudentCDI.gradeMessage}" style="color: red"/>  
                                     </div>
                                 </div>
                             </h:form>

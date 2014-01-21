@@ -52,11 +52,16 @@
                         </div>
                         <div class="panel-footer">
                             <div class="form-group">
-                            <span class="label label-default">Total GPA:</span>
-                            <span class="label label-primary">#{searchCourseCDI.total}</span>
-                            <h:outputLink id="link1" value="reports/report.pdf" class="btn btn-default small pull-right" target="_blank">
-                                <h:outputText value="Generate report" />
-                            </h:outputLink>
+                                <span class="label label-default">Total GPA:</span>
+                                <span class="label label-primary"><h:outputText value="#{searchCourseCDI.total}">
+
+
+                                        <f:convertNumber pattern="#,##0.00;(#,##0.00)" /></h:outputText></span>
+                                <div class="pull-right">
+                                    <h:form>
+                                        <h:commandButton  value="Generate Report " actionListener="#{searchCourseCDI.reportPDF()}"/>
+                                    </h:form>
+                                </div>
                             </div>
                         </div>
                     </div>

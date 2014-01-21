@@ -23,12 +23,20 @@ import pm.gradingsystem.entity.IUser;
 import pm.gradingsystem.entity.Section;
 
 @Named
-@RequestScoped
+@SessionScoped
 public class SectionStudentCDI implements Serializable {
 
     private float gradept;
    private String gradeMessage;
+    private IUser user;
 
+    public IUser getUser() {
+        return user;
+    }
+
+    public void setUser(IUser user) {
+        this.user = user;
+    }
     public String getGradeMessage() {
         return gradeMessage;
     }
@@ -49,6 +57,8 @@ public class SectionStudentCDI implements Serializable {
     FacultySectionCDI facultyCDI;
     @EJB
     FacultyService facultyEJB;
+    private float grade;
+    
     
 
    public Section getSection() {
@@ -89,6 +99,7 @@ public class SectionStudentCDI implements Serializable {
     }
 
     public String saveUser(IUser student) {
+        
         System.out.println(gradept);
         Grade gd = new Grade();
         //SimpleDate sdf=new SimpleDateFormat("mm/dd/yyyy");
@@ -112,5 +123,21 @@ public class SectionStudentCDI implements Serializable {
              gradeMessage= "  Grade Updated";
        }
         return "facultysectionstd";
+    }
+    public String addGradePage(IUser student){
+        this.user=student;
+        return "add_editGrade";
+    }
+    public float getGrade(IUser user) {
+         
+        if(facultyEJB.findgrade(section, user)!=null)
+        {
+             return facultyEJB.findgrade(section, user).getGpa();
+        }
+      
+        else
+            return 0.0f;
+       
+      //  return grade;
     }
 }

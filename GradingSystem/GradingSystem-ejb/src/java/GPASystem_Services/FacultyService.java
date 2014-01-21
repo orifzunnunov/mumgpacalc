@@ -10,6 +10,7 @@ package GPASystem_Services;
 //import GPASystem_entities.Faculty;
 //import GPASystem_entities.IUser;
 //import GPASystem_entities.Section;
+import java.math.BigDecimal;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
@@ -52,7 +53,10 @@ public class FacultyService {
     }
 
     public void saveGrade(Grade grade){
-      
+//                float p = 4f;
+//                p.divide(2f); 
+//                BigDecimal bd = new BigDecimal("4.0");
+//                bd.divide(new BigDecimal(p));
                em.persist(grade);
            }
     
@@ -85,4 +89,9 @@ public class FacultyService {
     public void edit(Grade gradenew) {
        em.merge(gradenew);
     }
+    
+   public List<Grade> getGradeForReport(IUser user){
+       TypedQuery<Grade> query= em.createQuery("SELECT c FROM Grade c where c.student_id.id=:id", Grade.class);
+          return query.setParameter("id", user.getId()).getResultList();
+   }
 }

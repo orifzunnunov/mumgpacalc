@@ -9,14 +9,29 @@ import GPASystem_Services.CourseService;
 import GPASystem_Services.Evaluation_Service;
 import GPASystem_Services.FacultyService;
 import GPASystem_Services.SectionService;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.ejb.EJB;
-import javax.enterprise.context.RequestScoped;
+
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+
 import pm.gradingsystem.ejb.UserManagement;
 import pm.gradingsystem.entity.Course;
 import pm.gradingsystem.entity.Evaluation;
@@ -65,9 +80,36 @@ public class SearchCourseCDI implements Serializable {
     float num;
     private Evaluation evaluation = new Evaluation();
     float total;
+     List<Grade> gradeforReport = new ArrayList<>();
     List<Grade> grades = new ArrayList<>();
     Grade grade=new Grade();
+      
 
+    public List<Grade> getGradeforReport() {
+        user = session.getUser();
+        setGradeforReport(facEJB.getGradeForReport(user));
+        return gradeforReport;
+    }
+
+    public void setGradeforReport(List<Grade> gradeforReport) {
+        this.gradeforReport = gradeforReport;
+    }
+    HttpServletResponse httpServletResponse;
+    JasperPrint jasperPrint; 
+    
+    public void init() throws IOException, JRException {
+    getGradeforReport();
+    JRBeanCollectionDataSource beanCollectionDataSource = new JRBeanCollectionDataSource(gradeforReport);
+   
+    String reportPath = FacesContext.getCurrentInstance().getExternalContext().getRealPath("/reports/gradeReport.jasper");
+  //  InputStream reportPath =  new FileInputStream(new File("/web/reports/testReport1.jasper"));
+   // Map<String, Object> param = new HashMap<String, Object>();
+  //  param.put("coursename", );
+    jasperPrint = JasperFillManager.fillReport(reportPath, new HashMap(), beanCollectionDataSource);
+    
+    
+    httpServletResponse = (HttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
+}
     public Grade getGrade() {
          user = session.getUser();
         return facEJB.findgrade(section, user);
@@ -95,6 +137,7 @@ public class SearchCourseCDI implements Serializable {
     }
 
     public float getTotal() {
+        
         return total;
     }
 
@@ -209,8 +252,18 @@ public class SearchCourseCDI implements Serializable {
             i = i + num1;
             num1 = 0;
         }
-
+        if(i==0){
+           total=0.0f; 
+        }else
         total = num / i;
 
     }
+   public void reportPDF() throws IOException, JRException{
+       init();
+    httpServletResponse.addHeader("Content-disposition", "attachment; filename=GradeReport.pdf");
+    ServletOutputStream servletOutputStream = httpServletResponse.getOutputStream();
+    JasperExportManager.exportReportToPdfStream(jasperPrint, servletOutputStream);
+    FacesContext.getCurrentInstance().responseComplete();
+       System.out.println("report");
+   }
 }
